@@ -1,0 +1,88 @@
+\documentclass[DIN, pagenumber=false, parskip=half,
+               fromalign=right, fromphone=true, fromfax=false,
+               fromrule=false]{scrlttr2}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{longtable}
+\LoadLetterOption{template}
+\renewcommand*{\raggedsignature}{\raggedright}
+
+\input{private.tex}
+
+\setkomavar{subject}[]{\ }
+\setkomavar{yourmail}[Due Date:]{\InvoiceDueDateVariable}
+\setkomavar{yourref}[Invoice No.]{\InvoiceNoVariable}
+\setkomavar{date}[Invoice Date]{\InvoiceDateVariable}
+
+
+% FOOTER ===========================
+ \firstfoot{\
+	\parbox[t]{\textwidth}{\footnotesize
+
+	\begin{tabular}[t]{l@{}}
+		 \multicolumn{1}{@{}l@{}}{Please Send Remittance To:}\\
+         \usekomavar{fromname}\\
+         \usekomavar{fromaddress}\\
+		 tel.: \usekomavar{fromphone}\\
+         email: \usekomavar{fromemail}\\
+	\end{tabular}
+	 \hfill{}
+	 \begin{tabular}[t]{l@{}}
+		 \multicolumn{1}{@{}l@{}}{Registration Information:}\\
+         VAT No.: \VATRegVariable\\
+         Co. Reg. No.: \CoRegVariable\\ \\ \\
+
+	 \end{tabular}
+	 \hfill{}
+	 \begin{tabular}[t]{l@{}}
+		 \multicolumn{1}{@{}l@{}}{Bank Details:}\\
+         \BankNameVariable\\
+         Sort Code: \BankSortCodeVariable\\
+         Account No.: \BankAccNoVariable\\
+	 \end{tabular}
+ }}
+%===================================
+
+\begin{document}
+
+
+\begin{letter}{Invoice To: \\
+               \ClientNameVariable\\
+               \ClientAddressVariable\\
+}
+
+\opening{\ }
+\vspace{-2.5cm}
+
+\begin{longtable}{|p{2.5cm}p{3cm}p{2.5cm}p{1cm}p{3cm}|p{3cm}|}
+	\hline
+	W/E Date & Employee & Description & Qty & Rate & TOTAL \\
+	\hline
+
+	\InvoiceWEVariable& \WorkerNameVariable& Basic Rate & 5 & \pounds\WorkerRateVariable& \pounds\WorkerWeekFeeVariable\\
+                      &                    &            &   &                           &                              \\
+	                  &                    &            &   &                           &                              \\
+	                  &                    &            &   &                           &                              \\
+	                  &                    &            &   &                           &                              \\
+	                  &                    &            &   &                           &                              \\
+	\hline\hline
+\end{longtable}
+
+
+\begin{longtable}{|p{2.5cm}p{2.5cm}p{4.5cm}|p{3cm}|p{3cm}|}
+	\hline
+    VAT Basis                    & Rate               & VAT Amount               &                        & \\
+	\hline
+    \pounds\WorkerWeekFeeVariable& \VATRateVariable\% & \pounds\VATAmountVariable& \textbf{Total}         & \pounds\WorkerWeekFeeVariable\\
+                                 &                    &                          & \textbf{VAT}           & \pounds\VATAmountVariable\\
+                                 &                    &                          & \textbf{Invoice Value} & \pounds\WorkerTotalFeeVariable\\
+	\hline
+	\hline
+\end{longtable}
+
+
+\end{letter}
+\end{document}

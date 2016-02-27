@@ -1,0 +1,37 @@
+% Company Details
+\setkomavar{fromname}{Company Name}
+\setkomavar{fromemail}{email@example.com}
+\setkomavar{fromphone}[tel: ]{+44 12345 6789}
+\setkomavar{fromaddress}{Address line 1\\
+                         Address Line 2}
+\newcommand{\VATRegVariable}{99999999999}
+\newcommand{\CoRegVariable}{999999999}
+
+
+% Bank Details
+\newcommand{\BankNameVariable}{Lloyds Bank PLC}
+\newcommand{\BankSortCodeVariable}{99--99--99}
+\newcommand{\BankAccNoVariable}{99999999}
+
+% Client Details
+\newcommand{\ClientNameVariable}{\textbf{Client Name}}
+\newcommand{\ClientAddressVariable}{Address line 1\\
+                                    Address line 2\\
+                                    POSTCODE
+}
+
+% Worker
+\newcommand{\WorkerNameVariable}{Name Surname}
+\newcommand{\WorkerRateVariable}{999.00}
+\newcommand{\WorkerWeekFeeVariable}{9999.00}
+\newcommand{\WorkerTotalFeeVariable}{9999.00}
+
+% VAT
+\newcommand{\VATRateVariable}{20}
+\newcommand{\VATAmountVariable}{999.00}
+
+% Invoice Specific
+\newcommand{\InvoiceDueDateVariable}{1st Jan. 2016}
+\newcommand{\InvoiceDateVariable}{1st Feb. 2016}
+\newcommand{\InvoiceNoVariable}{0001}
+\newcommand{\InvoiceWEVariable}{2016--01--01}
