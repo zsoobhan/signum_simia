@@ -9,7 +9,7 @@
 
 
 % Bank Details
-\newcommand{\BankNameVariable}{Lloyds Bank PLC}
+\newcommand{\BankNameVariable}{Bank Name}
 \newcommand{\BankSortCodeVariable}{99--99--99}
 \newcommand{\BankAccNoVariable}{99999999}
 
