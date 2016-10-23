@@ -20,18 +20,24 @@
                                     POSTCODE
 }
 
+
+
 % Worker
 \newcommand{\WorkerNameVariable}{Name Surname}
 \newcommand{\WorkerRateVariable}{999.00}
-\newcommand{\WorkerWeekFeeVariable}{9999.00}
-\newcommand{\WorkerTotalFeeVariable}{9999.00}
+\newcommand{\WorkerWeekFeeVariableA}{999.00}
+\newcommand{\WorkerWeekFeeVariableB}{999.00}
+\newcommand{\WorkerWeekFeeVariableTotal}{999.00}
+\newcommand{\WorkerTotalFeeVariable}{999.00}
 
 % VAT
 \newcommand{\VATRateVariable}{20}
 \newcommand{\VATAmountVariable}{999.00}
 
+
 % Invoice Specific
-\newcommand{\InvoiceDueDateVariable}{1st Jan. 2016}
-\newcommand{\InvoiceDateVariable}{1st Feb. 2016}
-\newcommand{\InvoiceNoVariable}{0001}
-\newcommand{\InvoiceWEVariable}{2016--01--01}
+\newcommand{\InvoiceDueDateVariable}{4\textsuperscript{th} Sept 2016}
+\newcommand{\InvoiceDateVariable}{30\textsuperscript{th} October 2016}
+\newcommand{\InvoiceNoVariable}{9999}
+\newcommand{\InvoiceWEIntervalA}{17\textsuperscript{th} Oct\textendash23\textsuperscript{th} Oct}
+\newcommand{\InvoiceWEIntervalB}{24\textsuperscript{th} Oct\textendash30\textsuperscript{th} Oct}

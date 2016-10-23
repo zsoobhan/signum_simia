@@ -6,7 +6,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
-\usepackage{longtable}
+\usepackage{booktabs}
 \LoadLetterOption{template}
 \renewcommand*{\raggedsignature}{\raggedright}
 
@@ -16,6 +16,7 @@
 \setkomavar{yourmail}[Due Date:]{\InvoiceDueDateVariable}
 \setkomavar{yourref}[Invoice No.]{\InvoiceNoVariable}
 \setkomavar{date}[Invoice Date]{\InvoiceDateVariable}
+\def\arraystretch{1.1}  % make space for \superscript{th} in table
 
 
 % FOOTER ===========================
@@ -56,32 +57,30 @@
 
 \opening{\ }
 \vspace{-2.5cm}
-
-\begin{longtable}{|p{2.5cm}p{3cm}p{2.5cm}p{1cm}p{3cm}|p{3cm}|}
+\begin{tabular}{|p{3.5cm}p{3cm}p{2.5cm}p{1cm}p{3cm}|p{2cm}|}
     \hline
-    W/E Date & Employee & Description & Qty & Rate & TOTAL \\
+     Interval&Employee&Description&Qty&Rate&TOTAL \\
     \hline
-
-    \InvoiceWEVariable& \WorkerNameVariable& Basic Rate & 5 & \pounds\WorkerRateVariable& \pounds\WorkerWeekFeeVariable\\
-                      &                    &            &   &                           &                              \\
-                      &                    &            &   &                           &                              \\
-                      &                    &            &   &                           &                              \\
-                      &                    &            &   &                           &                              \\
-                      &                    &            &   &                           &                              \\
-    \hline\hline
-\end{longtable}
+    \InvoiceWEIntervalA&\WorkerNameVariable&Basic Rate &5 &\pounds\WorkerRateVariable&\pounds\WorkerWeekFeeVariableA\\
+    \InvoiceWEIntervalB&\WorkerNameVariable&Basic Rate &5 &\pounds\WorkerRateVariable&\pounds\WorkerWeekFeeVariableB\\
+                       &                   &           &  &                          &                              \\
+                       &                   &           &  &                          &                              \\
+                       &                   &           &  &                          &                              \\
+                       &                   &           &  &                          &                              \\
+    \hline
+\end{tabular}
 
 
-\begin{longtable}{|p{2.5cm}p{2.5cm}p{4.5cm}|p{3cm}|p{3cm}|}
-    \hline
-    VAT Basis                    & Rate               & VAT Amount               &                        & \\
-    \hline
-    \pounds\WorkerWeekFeeVariable& \VATRateVariable\% & \pounds\VATAmountVariable& \textbf{Total}         & \pounds\WorkerWeekFeeVariable\\
-                                 &                    &                          & \textbf{VAT}           & \pounds\VATAmountVariable\\
-                                 &                    &                          & \textbf{Invoice Value} & \pounds\WorkerTotalFeeVariable\\
-    \hline
-    \hline
-\end{longtable}
+\begin{tabular}{p{3.5cm}p{3cm}p{2.5cm}p{1cm}p{3cm}p{2cm}}
+    \toprule
+    VAT Basis                         &Rate               &VAT Amount              &&                       & \\
+    \pounds\WorkerWeekFeeVariableTotal&\VATRateVariable\%&\pounds\VATAmountVariable&&                       &                                   \\
+    \toprule
+                                      &                  &                         &&\textbf{Total}         &\pounds\WorkerWeekFeeVariableTotal\\
+                                      &                  &                         &&\textbf{VAT}           &\pounds\VATAmountVariable\\
+                                      &                  &                         &&\textbf{Invoice Value} &\pounds\WorkerTotalFeeVariable\\
+    \bottomrule
+\end{tabular}
 
 
 \end{letter}
